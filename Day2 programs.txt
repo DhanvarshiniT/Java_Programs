@@ -1,0 +1,346 @@
+1.An integer as input and return "POSITIVE" if the integer is positive, "NEGATIVE" if the integer is negative and "ZERO" if the integer is zero.
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int num = sc.nextInt();
+      if(num >=1){
+        System.out.println("POSITIVE");
+      }
+      else if ( num == 0){
+        System.out.println("ZERO");
+      }
+      else {
+        System.out.println("NEGATIVE");
+      }
+  }
+}
+
+2.Kumar wants to know how the math functions are working in programming. Could you please help him write a program to understand the behavior of some mathematical functions like floor, ceil, round, sqrt, and power.
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      float a = sc.nextFloat();
+      int b = sc.nextInt();
+      int c = sc.nextInt();
+      int d = sc.nextInt();
+      System.out.println((int)Math.floor(a));
+      System.out.println((int)Math.ceil(a));
+      System.out.println((int)Math.round(a));
+      System.out.println((int)Math.sqrt(b));
+      System.out.println((int)Math.pow(c,d));
+  }
+}
+
+3.A program to read four integers and determine the minimum (smallest) number among them.
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       int num = sc.nextInt();
+       int num1 = sc.nextInt();
+       int num2 = sc.nextInt();
+       int num3 = sc.nextInt();
+       int a = (int)Math.min(num,num1);
+       int b = (int)Math.min(num2,num3);
+       if ( a < b){
+         System.out.println(a);
+       }
+       else {
+         System.out.println(b);
+       }
+  }
+}
+
+4.A program that takes a floating-point number as input and prints the value truncated (cut off) to two decimal places without rounding.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      double a = sc.nextDouble();
+      a = (int)(a*100)/100.0;
+      System.out.printf("%.2f",a);
+  }
+}
+
+5.A program that reads three integers and finds the second largest number among them using if-else statements.
+If all three numbers are equal, print: No second max.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        if (a == b && b == c) {
+            System.out.println("No second max");
+        } else if ((a > b && a < c) || (a > c && a < b)) {
+            System.out.println(a);
+        } else if ((b > a && b < c) || (b > c && b < a)) {
+            System.out.println(b);
+        } else {
+            System.out.println(c);
+        }
+    }
+}
+
+6.Take three integers A, B, C which denote the angles of a triangle.
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int num3 = sc.nextInt();
+        if (num1 + num2 + num3 == 180 && num1 > 0 && num2 > 0 && num3 > 0) {
+            System.out.println("VALID");
+            if (num1 == 60 && num2 == 60 && num3 == 60) {
+                System.out.println("EQUILATERAL");
+            } else if (num1 == num2 || num2 == num3 || num1 == num3) {
+                System.out.println("ISOSCELES");
+            } else {
+                System.out.println("SCALENE");
+            }
+        } else {
+            System.out.println("NOT VALID");
+            System.out.println();
+        }
+    }
+}
+
+7.A program that reads a single-digit number (0–9) as input and prints its word representation.
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        String[] words = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        for (int i = 0; i < 10; i++) {
+            if (number == i) {
+                System.out.println(words[i]);
+            }
+        }
+    }
+}
+
+8.A program that reads a single character as input and prints whether it is a vowel or a consonant.
+
+import java.util.Scanner;
+public class VowelOrConsonant {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);  
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+            System.out.println("vowel");
+        } 
+        else {
+            System.out.println("consonant");
+        }
+        sc.close();
+    }
+}
+
+9.A program that reads a year as input and prints whether it is a leap year or not.
+
+import java.util.Scanner;
+public class LeapYearCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int year = sc.nextInt();
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+
+        sc.close();
+    }
+}
+
+10.A program that reads marks in five subjects and calculates the average.
+
+import java.util.Scanner;
+
+public class FunGradeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int m1 = sc.nextInt();
+        int m2 = sc.nextInt();
+        int m3 = sc.nextInt();
+        int m4 = sc.nextInt();
+        int m5 = sc.nextInt();
+        double average = (m1 + m2 + m3 + m4 + m5) / 5.0;
+        if (average >= 90) {
+            System.out.println("Excellent!");
+        } else if (average >= 80) {
+            System.out.println("Great Job!");
+        } else if (average >= 70) {
+            System.out.println("Good Effort!");
+        } else if (average >= 50) {
+            System.out.println("Keep Trying!");
+        } else {
+            System.out.println("Better Luck Next Time!");
+        }
+
+        sc.close();
+    }
+}
+
+11.A program to determine the berth type based on the seat number.
+
+import java.util.Scanner;
+
+public class TrainBerthTypeFinder {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int seat = sc.nextInt();
+        int rem = seat % 8;
+
+        if (rem == 1 || rem == 4)
+            System.out.println("LB");
+        else if (rem == 2 || rem == 5)
+            System.out.println("MB");
+        else if (rem == 3 || rem == 6)
+            System.out.println("UB");
+        else if (rem == 7)
+            System.out.println("SL");
+        else
+            System.out.println("SU");
+
+        sc.close();
+    }
+}
+
+12.A program to calculate the electricity bill based on the number of units consumed.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double units = sc.nextDouble();
+        double bill = 0;
+
+        if (units <= 50) {
+            bill = units * 1;
+        } else if (units <= 150) {
+            bill = 50 * 1 + (units - 50) * 2;
+        } else if (units <= 250) {
+            bill = 50 * 1 + 100 * 2 + (units - 150) * 3;
+        } else {
+            bill = 50 * 1 + 100 * 2 + 100 * 3 + (units - 250) * 4;
+        }
+
+        if (bill > 150) {
+            bill += bill * 0.2; 
+        }
+
+        System.out.println((int) bill);
+    }
+}
+
+13.A program that takes a number as input and prints a famous Tamil cinema reference based on divisibility
+
+import java.util.Scanner;
+
+public class ThalaThalapathyGame {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        if (n % 3 == 0 && n % 5 == 0) {
+            System.out.println("ThalaThalapathy");
+        } else if (n % 3 == 0) {
+            System.out.println("Thala");
+        } else if (n % 5 == 0) {
+            System.out.println("Thalapathy");
+        } else {
+            System.out.println(n);
+        }
+
+        sc.close();
+    }
+}
+
+14.A program to calculate the train fare based on the passenger’s age and distance to travel.
+
+import java.util.Scanner;
+
+public class TrainFareCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int age = sc.nextInt();
+        int distance = sc.nextInt();
+
+        int standardFarePerKm = 5;
+        double totalFare = distance * standardFarePerKm;
+        if (age < 12) {
+            totalFare *= 0.5; 
+        } else if (age >= 60) {
+            totalFare *= 0.75; 
+        } 
+        if (totalFare == (int) totalFare) {
+            System.out.println((int) totalFare);
+        } else {
+            System.out.println(totalFare);
+        }
+
+        sc.close();
+    }
+}
+
+15.A program that reads marks in five subjects and calculates the average.
+
+import java.util.Scanner;
+
+public class AverageMarksCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int m1 = sc.nextInt();
+        int m2 = sc.nextInt();
+        int m3 = sc.nextInt();
+        int m4 = sc.nextInt();
+        int m5 = sc.nextInt();
+        double average = (m1 + m2 + m3 + m4 + m5) / 5.0;
+        if (average == (int) average) {
+            System.out.println((int) average);
+        } else {
+            System.out.printf("%.2f", average);
+        }
+
+        sc.close();
+    }
+}
+
+16.Fun Character Case Converter
+
+import java.util.Scanner;
+public class CaseConverter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0); 
+        if (ch >= 'a' && ch <= 'z') {  
+            System.out.println((char)(ch - 32));
+        } 
+        else if (ch >= 'A' && ch <= 'Z') {  
+            System.out.println((char)(ch + 32));
+        } 
+        else {  
+            System.out.println("abcd theriyatha?");
+        }
+        
+        sc.close();
+    }
+}
