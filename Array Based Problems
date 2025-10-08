@@ -1,0 +1,44 @@
+
+1.Find 1st Max and 2nd Max
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int arr[] = new int[size];
+        int firstmax=Integer.MIN_VALUE;
+        int secondmax=Integer.MIN_VALUE;
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+            if(arr[i]>firstmax){
+                secondmax=firstmax;
+                firstmax=arr[i];
+            }
+            else if(arr[i]>secondmax && arr[i]!=firstmax){
+                secondmax=arr[i];
+            }
+        }
+        System.out.println(firstmax+" "+secondmax);
+      }
+}
+
+2.Reverse an array
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int arr[] = new int[size];
+        for(int i=0;i<size;i++){
+             arr[i]=sc.nextInt();
+        }
+        for(int i=0,j=arr.length-1;i<j;i++,j--){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+        for(int x:arr){
+            System.out.print(x+" ");
+        }
+    }
+}
